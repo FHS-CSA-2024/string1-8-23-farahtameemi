@@ -124,7 +124,7 @@ System.out.println(s.deFront("away"));
      * makeOutWord("[[]]", "word") → "[[word]]"
      */
     public String makeOutWord(String out, String word) {
-        return unimplemented;
+        return out.substring(0, 2) + word + out.substring(2);
     }
 
     /*
@@ -135,7 +135,8 @@ System.out.println(s.deFront("away"));
      * extraEnd("Hi") → "HiHiHi"
      */
     public String extraEnd(String str) {
-        return unimplemented;
+        String lastTwo = str.substring(str.length() - 2);
+        return lastTwo + lastTwo + lastTwo;
     }
 
     /*
