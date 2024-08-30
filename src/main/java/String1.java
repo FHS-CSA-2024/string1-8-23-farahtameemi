@@ -149,7 +149,11 @@ System.out.println(s.deFront("away"));
      * firstTwo("ab") → "ab"
      */
     public String firstTwo(String str) {
-        return unimplemented;
+        if (str.length() < 2) {
+        return str;
+    } else {
+        return str.substring(0, 2);
+    }
     }
 
     /*
@@ -159,7 +163,7 @@ System.out.println(s.deFront("away"));
      * firstHalf("abcdef") → "abc"
      */
     public String firstHalf(String str) {
-        return unimplemented;
+        return str.substring(0, str.length() / 2);
     }
 
     /*
@@ -170,7 +174,7 @@ System.out.println(s.deFront("away"));
      * withoutEnd("coding") → "odin"
      */
     public String withoutEnd(String str) {
-        return unimplemented;
+        return str.substring(1, str.length() - 1);
     }
 
     /*
@@ -182,7 +186,11 @@ System.out.println(s.deFront("away"));
      * comboString("aaa", "b") → "baaab"
      */
     public String comboString(String a, String b) {
-        return unimplemented;
+        if (a.length() < b.length()) {
+        return a + b + a;
+    } else {
+        return b + a + b;
+    }
     }
 
     /*
@@ -193,7 +201,8 @@ System.out.println(s.deFront("away"));
      * middleThree("solving") → "lvi"
      */
     public String middleThree(String str) {
-        return unimplemented;
+        int mid = str.length() / 2;
+        return str.substring(mid - 1, mid + 2);
     }
 
     /*
@@ -204,7 +213,8 @@ System.out.println(s.deFront("away"));
      * extraFront("H") → "HHH"
      */
     public String extraFront(String str) {
-        return unimplemented;
+        String front = str.length() < 2 ? str : str.substring(0, 2);
+        return front + front + front;
     }
 
     /*
@@ -215,7 +225,7 @@ System.out.println(s.deFront("away"));
      * left2("Hi") → "Hi"
      */
     public String left2(String str) {
-        return unimplemented;
+        return str.substring(2) + str.substring(0, 2);
     }
 
     /*
@@ -227,7 +237,8 @@ System.out.println(s.deFront("away"));
      * hasBad("xxbadxx") → false
      */
     public boolean hasBad(String str) {
-        return false;
+         if (str.length() < 3) return false;
+        return str.startsWith("bad") || str.substring(1).startsWith("bad");
     }
 
     /*
@@ -239,7 +250,11 @@ System.out.println(s.deFront("away"));
      * conCat("abc", "") → "abc"
      */
     public String conCat(String a, String b) {
-        return unimplemented;
+        if (a.length() > 0 && b.length() > 0 && a.charAt(a.length() - 1) == b.charAt(0)) {
+            return a + b.substring(1);
+        } else {
+            return a + b;
+        }
     }
 
     /*
@@ -253,7 +268,8 @@ System.out.println(s.deFront("away"));
      *minCat("java", "Hello") → "javaello"
      */
     public String minCat(String a, String b) {
-        return unimplemented;
+        int minLen = Math.min(a.length(), b.length());
+        return a.substring(a.length() - minLen) + b.substring(b.length() - minLen);
     }
 
     /*
@@ -264,7 +280,10 @@ System.out.println(s.deFront("away"));
      * withoutX("Hxix") → "Hxi"
      */
     public String withoutX(String str) {
-        return unimplemented;
+        if (str.length() == 0) return str;
+        if (str.charAt(0) == 'x') str = str.substring(1);
+        if (str.length() > 0 && str.charAt(str.length() - 1) == 'x') str = str.substring(0, str.length() - 1);
+        return str;
     }
 
     /*
@@ -277,7 +296,11 @@ System.out.println(s.deFront("away"));
      * deFront("away") → "aay"
      */
     public String deFront(String str) {    
-        return unimplemented;
+        String result = "";
+        if (str.length() > 0 && str.charAt(0) == 'a') result += 'a';
+        if (str.length() > 1 && str.charAt(1) == 'b') result += 'b';
+        if (str.length() > 2) result += str.substring(2);
+        return result;
     }
 
 }
