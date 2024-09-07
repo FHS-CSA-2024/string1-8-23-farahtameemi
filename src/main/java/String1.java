@@ -30,9 +30,9 @@ public class String1
         System.out.println(s.firstTwo("abcdefg"));
         System.out.println(s.firstTwo("ab"));
 
-        System.out.println(s.firstHalf(WooHoo));
-        System.out.println(s.firstHalf(HelloThere));
-        System.out.println(s.firstHalf(abcdef));
+        System.out.println(s.firstHalf("WooHoo"));
+        System.out.println(s.firstHalf("HelloThere"));
+        System.out.println(s.firstHalf("abcdef"));
         
         System.out.println(s.withoutEnd("Hello"));
         System.out.println(s.withoutEnd("java"));
